@@ -1,0 +1,18 @@
+{
+  "name": "pi-costly",
+  "version": "0.1.0",
+  "description": "Pi extension for exporting cost/usage reports and forecasting future costs",
+  "type": "module",
+  "keywords": [
+    "pi-package"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/costly.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-ai": "*"
+  }
+}
