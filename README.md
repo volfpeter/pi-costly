@@ -32,3 +32,5 @@ A self-contained HTML report for a session:
 - **Request table**: per-request cost and usage breakdown
 
 Cost figures use the model's known pricing (including cache reads/writes when available). The trend estimates future cost from how context has been growing so far. It is useful for cost management and "continue or handoff" decisions.
+
+For an example report, see [https://volfpeter.github.io/pi-costly](https://volfpeter.github.io/pi-costly).
