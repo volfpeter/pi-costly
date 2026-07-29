@@ -8,10 +8,20 @@ The extension has **no dependencies**. Exported HTML files use **Chart.js** from
 
 ## Install
 
+You can install the extension directly from GitHub:
+
 ```bash
-pi install /absolute/path/to/pi-costly
-# or one-shot without install:
-pi -e ./extensions/costly.ts
+pi install git:github.com/volfpeter/pi-costly
+# or
+pi install https://github.com/volfpeter/pi-costly
+```
+
+If you want to use it temporarily without installing, you can start Pi with the following arguments:
+
+```bash
+pi -e git:github.com/volfpeter/pi-costly
+# or
+pi -e https://github.com/volfpeter/pi-costly
 ```
 
 ## Usage
