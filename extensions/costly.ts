@@ -4,7 +4,7 @@
  * Usage:
  *   /costly              current branch → ./{sessionId}.costly.html
  *   /costly [path.html]  current branch → custom path
- *   /costly-ls           pick any session → report in cwd
+ *   /costly-ls [path]    pick any session → report in cwd or custom path
  */
 
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -168,7 +168,7 @@ export default function (pi: ExtensionAPI) {
 
 	pi.registerCommand("costly-ls", {
 		description: "Pick any session, then export cost/usage charts (HTML)",
-		handler: async (_args, ctx) => {
+		handler: async (args, ctx) => {
 			try {
 				const sessions = await SessionManager.listAll();
 				if (sessions.length === 0) {
@@ -188,7 +188,7 @@ export default function (pi: ExtensionAPI) {
 					sessionFile: sm.getSessionFile() ?? selected.path,
 					sessionName: sm.getSessionName() ?? selected.name,
 					description: selected.firstMessage || undefined,
-					outPath: resolveOutputPath("", sessionId),
+					outPath: resolveOutputPath(args, sessionId),
 				});
 
 				ctx.ui.notify(
