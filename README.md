@@ -31,6 +31,6 @@ A self-contained HTML report for a session:
 - **Tool calls chart**: tools invoked per request
 - **Request table**: per-request cost and usage breakdown
 
-Cost figures use the model's known pricing (including cache reads/writes when available). The trend estimates future cost from how context has been growing so far. It is useful for cost management and "continue or handoff" decisions.
+Costs and other metrics come from the per-request usage data Pi already stores. The report fits a **quadratic trend curve** to the session so far and projects how per-request and cumulative costs are likely to grow if the session continues. Seeing the expected cost trajectory early helps you decide whether to continue the current session or hand off the remaining work to a new one before cost starts to run away.
 
 For an example report, see [https://volfpeter.github.io/pi-costly](https://volfpeter.github.io/pi-costly).
